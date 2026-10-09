@@ -27,7 +27,7 @@ app.use(session({
 }));
 
 app.use(cors({
-    origin: "http://localhost:5000",
+    origin: "fotovahviala-frontend.vercel.app",
     credentials: true
 }));
 
