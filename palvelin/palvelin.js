@@ -26,6 +26,11 @@ app.use(cors({
     credentials: true
 }));
 
+app.post("/api/yhteydenotto", async (req, res) => {
+    console.log("Yhteydenottoreitti kutsuttu");
+    console.log(req.body);
+});
+
 app.use(session({
     secret: ISTUNTO_SALAINEN,
     resave: false,
