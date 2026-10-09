@@ -21,6 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("trust proxy", 1);
 
+app.use(cors({
+    origin: "https://fotovahviala-frontend.vercel.app",
+    credentials: true
+}));
+
 app.use(session({
     secret: ISTUNTO_SALAINEN,
     resave: false,
@@ -32,11 +37,6 @@ app.use(session({
     }
 }));
 
-
-app.use(cors({
-    origin: "https://fotovahviala-frontend.vercel.app",
-    credentials: true
-}));
 
 // ASIAKKAIDEN KUVAT
 app.use(
