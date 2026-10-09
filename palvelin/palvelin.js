@@ -58,6 +58,9 @@ app.use("/api/galleria", galleriareitit);
 app.post("/api/yhteydenotto", async (req, res) => {
     const { nimi, sahkoposti, viesti } = req.body;
 
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS löytyi:", !!process.env.EMAIL_PASS);
+
     try {
       console.log("Lähetetään sähköpostia...");
         const transporter = nodemailer.createTransport({
