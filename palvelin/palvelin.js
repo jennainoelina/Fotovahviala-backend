@@ -63,8 +63,8 @@ app.post("/api/yhteydenotto", async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "jenna.vahviala@gmail.com",
-                pass: "jupfakidzyhxrtuz"
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             },
             tls: {
                 rejectUnauthorized: false
