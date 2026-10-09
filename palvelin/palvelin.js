@@ -19,12 +19,19 @@ app.use(express.static(path.join(__dirname, "../")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.set("trust proxy", 1);
+
 app.use(session({
     secret: ISTUNTO_SALAINEN,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }
+    cookie: {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"
+    }
 }));
+
 
 app.use(cors({
     origin: "https://fotovahviala-frontend.vercel.app",
