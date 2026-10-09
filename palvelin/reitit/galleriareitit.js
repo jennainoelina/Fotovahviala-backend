@@ -9,6 +9,8 @@ console.log(archiver);
 
 // ASIAKAS: hae kuvat
 router.get("/kuvat", (req, res) => {
+    console.log("SESSION:");
+    console.log(req.session);
     const asiakasId = req.session.asiakasId;
 
     if (!asiakasId) {
